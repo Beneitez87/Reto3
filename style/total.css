@@ -1,0 +1,74 @@
+
+
+fieldset{
+     border:1px solid white;
+     color: white;
+     padding: 10%;
+     font-size: 1em ;
+     background-color: lightslategray;
+     height:300px;
+     
+}
+
+
+.bidaia{
+    width:120px;
+    display:inline-block;
+    color: white;
+    margin-top: 20px;
+   
+}
+input[type="text"]
+{
+  width:60px;  
+height: 20px;
+}
+hr{
+  bottom:100px;}
+
+.totalesparciales{
+    margin-top:30px;
+    width:90%;
+    margin:auto;
+    background-color: lightslategray;
+    border:1px solid white;
+    background-color: rgba(0,0,0,0.3); 
+}
+
+ footer {
+   display: block;
+   margin: 4px;
+   padding: 5px;
+   min-height: 50px;
+   border: 1px solid #eebb55;
+   border-radius: 7pt;
+   background: lightslategray;
+  
+   text-align: center;
+   font-size: 25px;
+   color: white;
+   }
+    
+.emaitza{
+        border: 1px solid white;
+         padding: 10px;
+         width:100px;
+   }
+   
+   .Comprar{
+       
+       background-color: #2196F3;
+       
+   }
+   
+   .mas{
+       
+        background-color: #2196F3;
+       
+   }
+   
+   .menos{
+       
+        background-color: #2196F3;
+       
+   }

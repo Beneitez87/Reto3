@@ -1,0 +1,319 @@
+html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+}
+
+body {
+      font-family: "Helvetica Neue",sans-serif;
+      font-weight: lighter;
+      background: url(../IMG/crowd.jpg) no-repeat center center fixed;
+      
+      background-size: cover;
+      
+       
+
+}
+
+
+
+.button2{
+    
+    width: 70px;
+    height: 50px;
+    border-bottom: none;
+    border-bottom-color: rgba(0,0,0,0.2);
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.2);
+ 
+    
+}
+
+.content{
+      display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.p2{
+   color: white; 
+}
+
+.p2:hover{
+    color: black;
+}
+
+.btn3{
+    color: black;
+}
+
+li{
+    float: left;
+}
+
+
+
+
+#work2 {
+    border-radius: 5px;
+    position:absolute;
+    top:565px;
+    left:37.4%;
+    color:black;
+    z-index: 2;
+    
+
+
+}
+
+#Perfil{
+    padding: 5px;
+    border-radius: 10px;
+     background-color: rgba(0,0,0,0.8);
+     color: white;
+ 
+}
+
+
+
+#Perfil2{
+    padding: 5px;
+    width:200px; 
+    margin-left: 58.2%; 
+    position: relative; 
+    top: -297px; 
+     background-color: rgba(0,0,0,0.8);
+     color: white;
+    border-radius: 5px;
+    
+    
+}
+
+
+
+
+.card{
+    z-index: 1;
+  
+    
+}
+
+h3{
+    color: white;
+}
+
+tr{
+    color: white;
+}
+
+header {
+      width: 100%;
+      height: 100vh;
+      background: url(https://wallpaper.wiki/wp-content/uploads/2017/05/wallpaper.wiki-Beautiful-Full-HD-Wallpaper-Download-Free-PIC-WPE0010098.jpg) no-repeat 50% 50%;
+      background-size: cover;
+    
+}
+
+/*#carouselExampleControls{
+   
+    position: relative;
+}*/
+
+
+
+span{
+    
+}
+
+.login{
+    display: flex;
+   
+    color: white;
+  position: absolute;
+   background-color: rgba(0,0,0,0.8);
+   padding: 20px;
+   border-radius: 10px;
+   
+    margin-top: 18%;
+    margin-right: 45%;
+    float: right;
+    position: fixed;
+
+    left: 45%;
+    bottom: 150px;
+    width: 240px;
+  
+}
+.registro{
+    color: white;
+  
+   background-color: rgba(0,0,0,0.8);
+   padding: 20px;
+   border-radius: 10px;
+    display: flex;
+    margin-top: 18%;
+    margin-right: 45%;
+    float: right;
+    position: fixed;
+  
+    left: 45%;
+    bottom: 10px;
+    width: 240px;
+  
+}
+.regis{
+    color: white;
+  
+   background-color: rgba(0,0,0,0.8);
+   padding: 20px;
+   border-radius: 10px;
+    display: flex;
+    margin-top: 18%;
+    margin-right: 45%;
+    float: right;
+    position: fixed;
+  
+    left: 45%;
+    bottom: 10px;
+    width: 240px;
+  
+}
+
+.content {
+      width: 94%;
+      margin: 1em auto;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: justify;
+    display: flex;
+  
+    
+}
+
+.card{
+    margin: 10%;
+   
+}
+
+
+
+.logo {
+      line-height: 60px;
+      position: static;
+      float: left;
+      
+      color: #fff;
+      font-weight: bold;
+      font-size: 20px;
+      letter-spacing: 2px;
+      
+    
+    
+}
+
+nav {
+      position: fixed;
+      width: 100%;
+      line-height: 60px;
+      z-index: 100;
+    
+}
+
+nav ul {
+      line-height: 60px;
+      list-style: none;
+      background: rgba(0, 0, 0, 0);
+      overflow: hidden;
+      color: #fff;
+      padding: 0;
+      text-align: right;
+      margin: 0;
+      padding-right: 40px;
+      transition: 1s;
+    
+}
+
+nav.black ul {
+      background: #000;
+    
+}
+
+li {
+      display: inline-block;
+      
+      padding: 17px 30px;
+}
+
+#nav {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      transition: 0.5s;
+}
+#nav:hover{
+      text-decoration: none;
+      color: white;
+      font-size: 26px;
+}
+
+.menu-icon {
+      line-height: 60px;
+      width: 100%;
+     
+      background: #000;
+      text-align: right;
+      box-sizing: border-box;
+      padding: 28px 24px;
+      cursor: pointer;
+      color: #fff;
+      display: none;
+}
+
+@media(max-width: 786px) {
+
+      .logo {
+            position: fixed;
+            top: -8px;
+           
+      }
+      .login{
+    color: white;
+   
+    display: flex;
+    margin-top: 38%;
+    margin-right: 33%;
+    float: right;
+    position: fixed;
+    top: 20px;
+    left: 35%;
+    bottom: 200px;
+    width: 180px;
+}
+
+      nav ul {
+            max-height: 0px;
+            background: #000;
+      }
+
+      nav.black ul {
+            background: #000;
+      }
+
+      .showing {
+            max-height: 34em;
+      }
+
+      nav ul li {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 24px;
+            text-align: center;
+      }
+
+      .menu-icon {
+            display: block;
+      }
+
+}

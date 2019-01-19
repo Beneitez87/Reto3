@@ -1,0 +1,9 @@
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `verGrupoId`(IN `sp_id` INT)
+    NO SQL
+SELECT * FROM grupo WHERE idGrupo = sp_id$$
+DELIMITER ;
+
+
+
+https://www.w3schools.com/howto/howto_css_modals.asp
