@@ -45,73 +45,7 @@
             work.style.transition = "all 0.5s";
         }
     });
-});  
-    
-    </script>
-    
-    
-    <style>
-/*the container must be positioned relative:*/
-.custom-select {
-  position: relative;
-  font-family: Arial;
-}
-
-.custom-select select {
-  display: none; /*hide original SELECT element:*/
-}
-
-.select-selected {
-  background-color: gray;
-}
-
-/*style the arrow inside the select element:*/
-.select-selected:after {
-  position: absolute;
-  content: "";
-  top: 14px;
-  right: 10px;
-  width: 0;
-  height: 0;
-  border: 6px solid transparent;
-  border-color: #fff transparent transparent transparent;
-}
-
-/*point the arrow upwards when the select box is open (active):*/
-.select-selected.select-arrow-active:after {
-  border-color: transparent transparent #fff transparent;
-  top: 7px;
-}
-
-/*style the items (options), including the selected item:*/
-.select-items div,.select-selected {
-  color: #ffffff;
-  padding: 8px 16px;
-  border: 1px solid transparent;
-  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-  cursor: pointer;
-  user-select: none;
-}
-
-/*style items (options):*/
-.select-items {
-  position: absolute;
-  background-color: grey;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-/*hide the items when the select box is closed:*/
-.select-hide {
-  display: none;
-}
-
-.select-items div:hover, .same-as-selected {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-</style>
+});  </script>
 </head>
 
 <body ng-controller="miControlador">
@@ -121,9 +55,9 @@
                 <div class="menu-icon">
                     <i class="fa fa-bars fa-2x"></i>
                 </div>
-<!--                <div class="logo">
+                <div class="logo">
                     <img src="../IMG/Logo.png" style="position: static; width: 100px"> 
-                </div>-->
+                </div>
                 <div class="menu">
                     <ul>
                       
@@ -131,9 +65,9 @@
                         
                         
                              
-                        <li><a id="nav" href="#" class="nav-anadir" >Añadir</a></li>
+                         <li><a id="nav" href="#" >Añadir</a></li>
                         <li><a id="nav" href="#" >Borrar</a></li>
-                        <li><a id="nav" href="#" class="nav-modificar" >Modificar</a></li>
+                        <li><a id="nav" href="#" >Modificar</a></li>
                          <li><a id="nav" href="#" >Buscar</a></li>
                       
                      
@@ -178,7 +112,6 @@
                 </div>
 
             </nav>
-            
             
             
         
@@ -307,260 +240,9 @@
         </header>
         
          
-   
-        <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: black;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-/* Add padding to containers */
-.container {
-  padding: 16px;
-  background-color: white;
-}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-/* Overwrite default styles of hr */
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-/* Set a style for the submit button */
-.registerbtn {
-  background-color: gray;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.registerbtn:hover {
-  opacity: 1;
-}
-
-/* Add a blue text color to links */
-a {
-  color: dodgerblue;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-  background-color: #f1f1f1;
-  text-align: center;
-}
-</style>
-</head>
-<body>
-
-
-
-    
-    
-<form action="#">
-    <div id="ModificarGrupo" class="container">
-    <h1>Modificar Grupo</h1>
-    <p>Porfavor rellena todos los datos</p>
-    <hr>
-
-  
- <!--surround the select box with a "custom-select" DIV element. Remember to set the width:-->
-<div class="custom-select" style="width:190px; height:45px; margin-left:80%  ">
-  <select>
-    <option value="0">Selecciona id:</option>
-    <option value="1">1</option>
-    <option value="1">2</option>
-    <option value="1">3</option>
-   
-  </select>
-</div>
-
-    <label for="NombreGrupo"><b>Nombre de Grupo</b></label>
-    <input type="text" placeholder="Introduce Nombre de Grupo" name="NombreGrupo" required>
-
-    <label for="ImagenGrupo"><b>Imagen de Grupo</b></label>
-    <input type="text" placeholder="Introduce Imagen de Grupo" name="ImagenGrupo" required>
-    
-    <label for="Video"><b>Video</b></label>
-    <input type="text" placeholder="Introduce Video" name="Video" required>
-    <label for="AñoFormacion"><b>Año de Formacion</b></label>
-    <input type="text" placeholder="Introduce Año de Formacion" name="AnoFormacion" required>
-    
-        <label for="Genero"><b>Genero</b></label>
-    <input type="text" placeholder="Introduce Genero" name="Genero" required>
-    
-        
-     <label for="Descripcion"><b>Descripcion</b></label>
-     <p><textarea cols="50" rows="5" name="Descripcion" placeholder="Introduce Descripcion"></textarea></p>
-   
-    <label for="DescripcionCompleta"><b>Descripcion Completa</b></label>
-  <p><textarea cols="50" rows="5" name="DescripcionCompleta" placeholder="Introduce DescripcionCompleta"></textarea></p>
-     
-  
-  <label style="margin-left: 50%; margin-top: 2%; " for="Miembros"><b style=" position: absolute; margin-top:-19.5%">Miembros</b></label>
-    <p style="margin-left: 50%; margin-top:-25%"><textarea cols="50" rows="5" name="Miembros" placeholder="Introduce Miembros"></textarea></p>
-    
-    
-    <label style="margin-left: 50%" for="Discos"><b>Discos</b></label>
-    <p style="margin-left: 50% "><textarea cols="50" rows="5" name="Discos" placeholder="Introduce Discos"></textarea></p>
-    
-    
-    <hr>
-    <p>Zornotza Ticket Company <a href="#">Terms & Privacy</a>.</p>
-
-    <button type="submit" class="registerbtn">Modificar</button>
-  </div>
-</form>    
-    
-    
-    
-<form action="#">
-    <div id="AnadirGrupo" class="container">
-    <h1>Añadir Grupo</h1>
-    <p>Porfavor rellena todos los datos</p>
-    <hr>
-
-  
-
-    <label for="NombreGrupo"><b>Nombre de Grupo</b></label>
-    <input type="text" placeholder="Introduce Nombre de Grupo" name="NombreGrupo" required>
-
-    <label for="ImagenGrupo"><b>Imagen de Grupo</b></label>
-    <input type="text" placeholder="Introduce Imagen de Grupo" name="ImagenGrupo" required>
-    
-    <label for="Video"><b>Video</b></label>
-    <input type="text" placeholder="Introduce Video" name="Video" required>
-    <label for="AñoFormacion"><b>Año de Formacion</b></label>
-    <input type="text" placeholder="Introduce Año de Formacion" name="AnoFormacion" required>
-    
-        <label for="Genero"><b>Genero</b></label>
-    <input type="text" placeholder="Introduce Genero" name="Genero" required>
-    
-        
-     <label for="Descripcion"><b>Descripcion</b></label>
-     <p><textarea cols="50" rows="5" name="Descripcion" placeholder="Introduce Descripcion"></textarea></p>
-   
-    <label for="DescripcionCompleta"><b>Descripcion Completa</b></label>
-  <p><textarea cols="50" rows="5" name="DescripcionCompleta" placeholder="Introduce DescripcionCompleta"></textarea></p>
-     
-  
-  <label style="margin-left: 50%; margin-top: 2%; " for="Miembros"><b style=" position: absolute; margin-top:-19.5%">Miembros</b></label>
-    <p style="margin-left: 50%; margin-top:-25%"><textarea cols="50" rows="5" name="Miembros" placeholder="Introduce Miembros"></textarea></p>
-    
-    
-    <label style="margin-left: 50%" for="Discos"><b>Discos</b></label>
-    <p style="margin-left: 50% "><textarea cols="50" rows="5" name="Discos" placeholder="Introduce Discos"></textarea></p>
-    
-    
-    <hr>
-    <p>Zornotza Ticket Company <a href="#">Terms & Privacy</a>.</p>
-
-    <button type="submit" class="registerbtn">Añadir</button>
-  </div>
-</form>
           
                    
-
-
-
-
-
-<script>
-var x, i, j, selElmnt, a, b, c;
-/*look for any elements with the class "custom-select":*/
-x = document.getElementsByClassName("custom-select");
-for (i = 0; i < x.length; i++) {
-  selElmnt = x[i].getElementsByTagName("select")[0];
-  /*for each element, create a new DIV that will act as the selected item:*/
-  a = document.createElement("DIV");
-  a.setAttribute("class", "select-selected");
-  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-  x[i].appendChild(a);
-  /*for each element, create a new DIV that will contain the option list:*/
-  b = document.createElement("DIV");
-  b.setAttribute("class", "select-items select-hide");
-  for (j = 1; j < selElmnt.length; j++) {
-    /*for each option in the original select element,
-    create a new DIV that will act as an option item:*/
-    c = document.createElement("DIV");
-    c.innerHTML = selElmnt.options[j].innerHTML;
-    c.addEventListener("click", function(e) {
-        /*when an item is clicked, update the original select box,
-        and the selected item:*/
-        var y, i, k, s, h;
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        h = this.parentNode.previousSibling;
-        for (i = 0; i < s.length; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            for (k = 0; k < y.length; k++) {
-              y[k].removeAttribute("class");
-            }
-            this.setAttribute("class", "same-as-selected");
-            break;
-          }
-        }
-        h.click();
-    });
-    b.appendChild(c);
-  }
-  x[i].appendChild(b);
-  a.addEventListener("click", function(e) {
-      /*when the select box is clicked, close any other select boxes,
-      and open/close the current select box:*/
-      e.stopPropagation();
-      closeAllSelect(this);
-      this.nextSibling.classList.toggle("select-hide");
-      this.classList.toggle("select-arrow-active");
-    });
-}
-function closeAllSelect(elmnt) {
-  /*a function that will close all select boxes in the document,
-  except the current select box:*/
-  var x, y, i, arrNo = [];
-  x = document.getElementsByClassName("select-items");
-  y = document.getElementsByClassName("select-selected");
-  for (i = 0; i < y.length; i++) {
-    if (elmnt == y[i]) {
-      arrNo.push(i)
-    } else {
-      y[i].classList.remove("select-arrow-active");
-    }
-  }
-  for (i = 0; i < x.length; i++) {
-    if (arrNo.indexOf(i)) {
-      x[i].classList.add("select-hide");
-    }
-  }
-}
-/*if the user clicks anywhere outside the select box,
-then close all select boxes:*/
-document.addEventListener("click", closeAllSelect);
-</script>
+           
     
 </body>
 

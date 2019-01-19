@@ -58,13 +58,13 @@
                 <div class="menu-icon">
                     <i class="fa fa-bars fa-2x"></i>
                 </div>
-<!--                <div class="logo">
+                <div class="logo">
                     <img src="../IMG/Logo.png" style="position: static; width: 100px"> 
-                </div>-->
+                </div>
                 <div class="menu">
                     <ul>
-                        <li><a id="nav" class="nav" href="#" >Inicio</a></li>
-                        <li><a id="nav" class="nav" href="#">Entradas</a></li>
+                        <li><a id="nav" href="#" >Inicio</a></li>
+                        <li><a id="nav" href="#">Entradas</a></li>
                         
                          <?php  
                         
@@ -73,7 +73,7 @@
                             ?>
                             
                             
-                        <li><a id="nav" class="nav" href="#" ng-click="login()" >Identificate</a></li>
+                        <li><a id="nav" href="#" ng-click="login()" >Identificate</a></li>
                         
                         
                          <?php     
@@ -247,7 +247,7 @@
                 <input name="fecha" type="hidden" value="<?php echo $fecha ?>">
                  <input name="idConciertoSala" type="hidden" value="<?php echo $idConciertoSala ?>">
                   <input name="Usuario" type="hidden" value="<?php echo $Usuario ?>">
-            <input class="Comprar"  type="submit" value="Comprar">
+            <input class="Comprar"  type="submit" value="Reservar">
             </form> <br>
             
         </footer>

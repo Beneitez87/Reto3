@@ -60,13 +60,13 @@ $listaGrupos = $objGrupos->getList();
                 <div class="menu-icon">
                     <i class="fa fa-bars fa-2x"></i>
                 </div>
-<!--                <div class="logo">
+                <div class="logo">
                     <img src="../IMG/Logo.png" style="position: static; width: 100px"> 
-                </div>-->
+                </div>
                 <div class="menu">
                     <ul>
-                        <li><a id="nav" class="nav" href="../index.php" >Inicio</a></li>
-                        <li><a id="nav" class="nav" href="#">Entradas</a></li>
+                        <li><a id="nav" href="../index.php" >Inicio</a></li>
+                        <li><a id="nav" href="#">Entradas</a></li>
                         
                          <?php  
                         
@@ -75,7 +75,7 @@ $listaGrupos = $objGrupos->getList();
                             ?>
                             
                             
-                        <li><a id="nav" class="nav" href="#" ng-click="login()" >Identificate</a></li>
+                        <li><a id="nav" href="#" ng-click="login()" >Identificate</a></li>
                         
                         
                          <?php     

@@ -7,8 +7,8 @@ $idGrupo = filter_input(INPUT_GET, 'sp_id');
 
 $descripModel=new GrupoModel();
 
-$descripModel->verGrupoId($idGrupo); 
-                                          
+$descripModel->verGrupoId($idGrupo); // returns all the films 
+                                            //with the director object
 
 $listDescripcion=$descripModel->getList();
 

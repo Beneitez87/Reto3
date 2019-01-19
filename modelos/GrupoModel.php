@@ -73,28 +73,6 @@ include_once("connect_data.php");
 
         $this->CloseConnect();
     }
-    
-    
-       public function BorrarGrupo($idGrupo) { 
-
-           
-
-        $this->OpenConnect();  
-      $sql = "CALL borrarGrupo('" . $idGrupo . "')"; 
-        
-         
-         $this->list = array(); 
-  
-  
-       
-    
-
-        
-      
-        $this->link->query($sql);
-
-        $this->CloseConnect();
-    }
      
     
         public function verInformacionGrupos($idGrupo) { 
@@ -157,7 +135,7 @@ include_once("connect_data.php");
          
            
           $Grupo->setNombreGrupo($row['NombreGrupo']);
-            $Grupo->setImagenGrupo($row['imagenGrupo']);
+            $Grupo->setImagenGrupo($row['imagenGrupo2']);
             $Grupo->setDescripcion($row['descripcion']);
             $Grupo->setIdGrupo($row['idGrupo']);
             $Grupo->setVideo($row['video']);

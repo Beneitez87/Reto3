@@ -25,7 +25,6 @@ MyApp.controller('miControlador', function($scope){
        $scope.cancelar=function (){
            $scope.verFormulario="no";
            $scope.verRegistro="no";
-           $scope.cerrarError="no";
        };
        $scope.registro=function(){
            $scope.verRegistro="si";
@@ -47,10 +46,6 @@ MyApp.controller('miControlador', function($scope){
       
 });
 
-
-
-
-
 $(document).ready(function() {
             $(".menu-icon").on("click", function() {
                   $("nav ul").toggleClass("showing");
@@ -62,20 +57,14 @@ $(document).ready(function() {
       $(window).on("scroll", function() {
             if($(window).scrollTop()) {
                   $('nav').addClass('black');
-                  $('.nav').addClass('black');
+                  $('#nav').addClass('black');
             }
 
             else {
                   $('nav').removeClass('black');
-                  $('.nav').removeClass('black');
+                  $('#nav').removeClass('black');
             }
-      });
-      
- 
-      
-      
-      
- 
+      })
       
       
 
