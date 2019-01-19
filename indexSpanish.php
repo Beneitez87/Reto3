@@ -1,22 +1,11 @@
    <?php
 session_start();
    
-include_once '../modelos/GrupoClass.php';
-include_once '../modelos/GrupoModel.php';
+include_once 'modelos/GrupoClass.php';
+include_once 'modelos/GrupoModel.php';
 $objGrupos= new GrupoModel();
 $objGrupos->verGrupos();
 $listaGrupos = $objGrupos->getList();
-include_once '../controladores/controladorDescripcionCompleta.php';
-include_once '../modelos/GrupoModel.php';
-include_once '../modelos/GrupoClass.php';
- $sp_id = filter_input(INPUT_GET, "sp_id");
-include_once '../modelos/ComentarioClass.php';
-include_once '../modelos/ComentarioModel.php';
-$objComentarios= new ComentarioModel();
-$objComentarios->verComentarios($sp_id);
-$listaComentarios = $objComentarios->getList();
-$respuesta = "si";
-
 
 
                   ?>
@@ -33,14 +22,12 @@ $respuesta = "si";
     <script type="text/javascript" src="JS/snowstorm.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="../lib/angular.min.js" type="text/javascript"></script>
+  <script src="lib/angular.min.js" type="text/javascript"></script>
 
-  <link rel="stylesheet" href="../style/style.css">
-    <script src="../JS/jquery-3.3.1.js"></script>
-    <script src="../js.js"></script>
-    <script src="../JS/jquery.js"></script>
-    <script src="../JS/jqueryComentarios.js"></script>
- 
+    <link rel="stylesheet" href="style/style.css">
+    <script src="JS/jquery-3.3.1.js"></script>
+    <script src="js.js"></script>
+    <script src="JS/jquery.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     
     
@@ -64,24 +51,50 @@ $respuesta = "si";
         }
     });
 });  </script>
-    
-    
+
 </head>
 
-<body id="fondo1" ng-controller="miControlador">
+<body ng-controller="miControlador">
+
+
     <div class="wrapper">
-        <header id="fondo2">
+        <header>
             <nav>
                 <div class="menu-icon">
                     <i class="fa fa-bars fa-2x"></i>
                 </div>
                 <div class="logo">
-                    <img src="../IMG/Logo.png" style="position: static; width: 100px"> 
+                    <img src="IMG/Logo.png" style="position: static; width: 100px"> 
                 </div>
                 <div class="menu">
                     <ul>
-                        <li><a id="nav" href="../index.php" >Inicio</a></li>
-                        <li><a id="nav" href="vistaEntradas.php">Entradas</a></li>
+                        <li><a id="nav" href="#" >Inicio</a></li>
+                            <?php
+                        
+                        if(isset($_SESSION['usuario'])){
+                            
+                            ?>
+                        <li><a id="nav" href="vistas/vistaEntradas.php">Entradas</a></li>
+                            <?php
+                        
+                        }
+                            
+                            ?>
+                         <?php  
+                        if(isset($_SESSION['privilegios'])){
+                           $Privilegios= $_SESSION['privilegios'];
+                           $Admin = "Administrador";
+                          
+                           if(strcmp($Privilegios,$Admin)== 0){
+                                ?> 
+                        <li><a id="nav" href="vistas/vistaAdmin.php" >Panel Administrador</a></li>
+                               <?php 
+                           }
+                        }
+                              ?> 
+                          
+                            
+                      
                         
                          <?php  
                         
@@ -96,6 +109,8 @@ $respuesta = "si";
                          <?php     
                       }
                          ?>
+
+                        <li><a id="nav" href="controladores/Destruir_cookie_controller.php" >Elegir Idioma</a></li>
                         
                         <?php
                         
@@ -107,12 +122,10 @@ $respuesta = "si";
                      
                          <h4><b>Bienvenido: <?php echo $_SESSION['usuario']?> (<?php echo $_SESSION['privilegios']?>)   </b></h4> 
                          
-                          <button class="button2"><a href="../controladores/controladorSalirLogin.php" name="CerrarSesion"><p class="p2">Cerrar sesión</p></a></button>
+                          <button class="button2"><a href="controladores/controladorSalirLogin.php" name="CerrarSesion"><p class="p2">Cerrar sesión</p></a></button>
                         <button class="button2"><a  id="linkPerfil" name="miPerfil"><p class="p2">Mi Perfil</p></a></button>
                          
-                         
-                      
-                        
+        
                       <?php     
                       }
                          ?>
@@ -121,14 +134,14 @@ $respuesta = "si";
                 </div>
 
             </nav>
-            
+             
             
         
             <div class="login" style="z-index: 80" ng-show="verFormulario === 'si'" ng-style="style">
                 
                 <div ng-show="formulario ==='si'" >
                     <button  class="fas fa-times-circle" type="button" ng-click="cancelar()" style="margin-left: 180px; border: none; padding: 0; background: none;" ></button>
-                    <form action="../controladores/controladorLogin.php" method="POST"> 
+                    <form action="controladores/controladorLogin.php" method="POST"> 
  <div class="form-group">
       <label for="email">Nombre:</label>
       <input type="text" class="form-control" id="nombre" <?php if((filter_input(INPUT_COOKIE, 'cook_user'))!=NULL){ echo 'style="background-color: yellow;';} ?> placeholder="Introduce Usuario" name="nombre" <?php if((filter_input(INPUT_COOKIE, 'cook_user'))!=NULL)
@@ -138,6 +151,11 @@ $respuesta = "si";
       ?> required>
       
     </div>
+    <?php
+    if (isset($_GET["intento"])) {
+        echo '<script>alert ("No encontramos ningún usuario con estos datos.\nPor favor, vuelva a intentarlo.");</script>';
+    }
+    ?>
                               
 
     <div class="form-group">
@@ -246,196 +264,46 @@ $respuesta = "si";
 </div>
         </div>
             
-           
-           
-            
-          
-            
-       
-                
-                
-                
-                <?php
-                foreach($listDescripcion as $descripModel){
-                ?>
-           <div class="grupo" style=" " >
-               <div class="dentro-grupo">
-                   <img style="width: 239px; height: 414px;" src="../<?php echo $descripModel->getImagenGrupo();?>"> 
-               </div>
-               <div class="video" style="">
-                  <iframe
-                    src="<?php echo $descripModel->getVideo();?>">  
-
-</iframe>
-               </div>
-                    
-            </div>
-          
-            <div class="grupo2" style=" " >
-                    <div class="dentro-grupo2">
-                        <div style="font-weight: bold"> Discos:</div> <h4> <?php echo $descripModel->getDiscos();?></h4>
-                        <div style="font-weight: bold"> Miembros: </div><h4> <?php echo $descripModel->getMiembros();?></h4>
-                        <div style="font-weight: bold">Genero:</div><h4> <?php echo $descripModel->getGenero();?></h4>
-                        <div style="font-weight: bold">Año formacion:</div><h4> <?php echo $descripModel->getAñoFormacion();?></h4>
-                </div>
-                    
-            </div>
-            
-                <div class="descripcion">
-                        <div class="dentro-descripcion">
-                            <H5><?php echo $descripModel->getDescripcionCompleta();?></H5>
-                    </div>
-            </div>
-            <?php
-                }
-                ?>
-          
         </header>
-            <section>
-                <form class="container" action="../controladores/controladorComentario.php" target="_blank" method="POST">
-
-  <h3>Mensaje para el autor:</h3>
-
-  <p><textarea cols="100" rows="10" name="mensaje" placeholder="Comparte tu opinión con el autor!"></textarea></p>
-  <input type="hidden" name="idGrupo" value="<?php echo $sp_id;?>">
-  <p class="p2"><input class="button2" type="submit" value="Enviar"></p>
-
-</form>
-                
-               
-                
-          <div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <h2 class="page-header">Comentarios</h2>
-        <section class="comment-list">
-          <!-- First Comment -->
-             <?php
-                foreach($listaComentarios as $objComentarios){
-                  $userComment = $objComentarios->getUsername();
-                  if($objComentarios->getUsername() !=  $_SESSION['usuario']){
-                  
-                ?>
-          <article class="row">
-            <div class="col-md-2 col-sm-2 hidden-xs">
-              <figure class="thumbnail">
-                <img class="img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
-                <figcaption class="text-center"><?php echo $objComentarios->getUsername();?></figcaption>
-              </figure>
-            </div>
-            <div class="col-md-10 col-sm-10">
-              <div class="panel panel-default arrow left">
-                <div class="panel-body">
-                  <span class="text-left">
-                      <div class="comment-user"><i class="fa fa-user"></i> <?php echo $objComentarios->getUsername();?></div>
-                      <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> <?php echo $objComentarios->getFechaComentario()?>  <?php echo $objComentarios->getHoraComentario()?></time>
-                    
-                  </span>
-                  <div class="comment-post">
-                    <p>
-                      <?php echo $objComentarios->getComentario();?>
-                    </p>
-                  </div>
-                     <?php if($objComentarios->getUsername() !=  $_SESSION['usuario']){?>
-                    <p ng-click="responder()" class="text-right"><a ng-click="responder()" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> reply</a></p>
-                     <?php } ?>
-                </div>
-              </div>
-                
-            </div>
-              
-          </article>
-           
-          
-          
         
-          <?php
-                  }
-                     if($objComentarios->getUsername() ==  $_SESSION['usuario']){
-                                 
-                ?>
-          
          
-          
-<article class="row">
-            <div class="col-md-10 col-sm-10">
-              <div class="panel panel-default arrow right">
-                <div class="panel-body">
-                  <span class="text-right">
-                    <div class="comment-user"><i class="fa fa-user"></i> Yo</div>
-                    <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> <?php echo $objComentarios->getFechaComentario()?>  <?php echo $objComentarios->getHoraComentario()?></time>
-                  </span>
-                  <div class="comment-post">
-                    <p>
-                     <?php echo $objComentarios->getComentario();?>
-                    </p>
-                  </div>
-                     <?php if($objComentarios->getUsername() !=  $_SESSION['usuario']){?>
-                  <p class="text-right"><a href="#fondo1" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> reply</a></p>
-                     <?php }?>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2 col-sm-2 hidden-xs">
-              <figure class="thumbnail">
-                <img class="img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
-                <figcaption class="text-center"><?php echo $objComentarios->getUsername();?></figcaption>
-              </figure>
-            </div>
-          </article>
-          
-       
-        <?php
-                     
-                                 }
-                }
-                ?>
-          
-     
-          <form ng-show="verResponder === 'si'" id="1" class="container" action="../controladores/controladorReply.php" target="_blank" method="POST">
-
+              <?php 
+                
+                foreach($listaGrupos as $objGrupos){
+   
   
-
-  <p><textarea cols="97" rows="10" name="mensaje" placeholder="Responder"></textarea></p>
-  <input type="hidden" name="idGrupo" value="<?php echo $sp_id;?>">
-  <p class="p2"><input class="button2" type="submit" value="Responder"></p>
-
-</form>
-            <?php if($respuesta == "si"){ ?>
-          
-          <article class="row">
-            <div class="col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-0 hidden-xs">
-              <figure class="thumbnail">
-                <img class="img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
-                <figcaption class="text-center">username</figcaption>
-              </figure>
-            </div>
-            <div class="col-md-9 col-sm-9">
-              <div class="panel panel-default arrow left">
-                <div class="panel-heading right">Reply</div>
-                <div class="panel-body">
-                  <span class="text-left">
-                    <div class="comment-user"><i class="fa fa-user"></i> That Guy</div>
-                    <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> Dec 16, 2014</time>
-                  </span>
-                  <div class="comment-post">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                  </div>
-                  <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> reply</a></p>
+  
+  
+  
+?>
+        <div class="content">
+            
+            <div class="" style="width: 25rem; margin: -5px; background-color: white; float: top; display: flex; height: 230px;" >
+                <img class="card-img-top" src="<?php echo $objGrupos->getImagenGrupo();?>" alt="Card image cap">
+                <div class="card-body" style="background-color: white;margin-left: 20px; ">
+                  
+                    
+                    <h5 class="" style="  font-weight: bold;" > <?php echo $objGrupos->getNombreGrupo();?></h5>
+                       <div> <h5 style=" ">  <?php echo $objGrupos->getDescripcion();?> </h5></div>
+                     
+                       <form action="controladores/controladorFechas.php" method="POST">
+                           <input type="hidden" name="idGrupo"  value="<?php echo $objGrupos->getIdGrupo();?>" >
+                         <button type="submit" class="far fa-calendar-alt fa-2x" style="background: none; border: none; margin-left: 650px; margin-bottom: 50px;">  </button>
+                       </form>
+                        
+                       <a href="controladores/controladorDescripcionCompleta.php?sp_id=<?php echo $objGrupos->getIdGrupo(); ?>" style="margin-top: -20px; width: 70rem;" class="btn btn-primary">Ver Grupo</a>
+                       
                 </div>
-              </div>
+                       </div>   
             </div>
-          </article>
-          
-            <?php } ?>
-    </div>
-  </div>
-</div>
-          
-      
-            <footer>
+         <?php                 
+                        } ?>
+                   
+           
+   
+</body>
+
+ <footer>
 <div class="social">
   <a href="#" class="social__button mail"><i class="fa fa-envelope-o"></i></a>
   <a href="#" class="social__button facebook"><i class="fa fa-facebook"></i></a>
@@ -444,11 +312,5 @@ $respuesta = "si";
   <a href="#" class="social__button codepen"><i class="fa fa-codepen"></i></a>
 </div>   
         </footer>
-        
-         
-                   
-           
-    
-</body>
 
 </html>

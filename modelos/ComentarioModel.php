@@ -57,7 +57,6 @@ class ComentarioModel extends ComentarioClass{
              $Comentario = new ComentarioClass;
            
             $Comentario->setIdConcierto($row['idConcierto']);
-            $Comentario->setIdComentario($row['idComentario']);
             $Comentario->setUsername($row['username']);
             $Comentario->setComentario($row['comentario']);
             $Comentario->setFechaComentario($row['fechaComentario']);
@@ -72,52 +71,6 @@ class ComentarioModel extends ComentarioClass{
            
             
              array_push($this->list, $Comentario);
-            
-              
-            
-            
-        }
-
-        
-      
-        $this->link->query($sql);
-
-        $this->CloseConnect();
-    }
-    
-    
-     public function respuesta() { 
-
-           
-
-        $this->OpenConnect();  
-     $sql = "SELECT * FROM `comentario` ORDER BY `comentario`.`idComentario` DESC LIMIT 1"; 
-
-        
-         
-         $this->list = array(); 
-  
-        $result = $this->link->query($sql); 
-       
-         while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-             $respuesta = new ComentarioClass;
-           
-            $respuesta->setIdConcierto($row['idConcierto']);
-            $respuesta->setIdComentario($row['idComentario']);
-            $respuesta->setUsername($row['username']);
-           $respuesta->setComentario($row['comentario']);
-            $respuesta->setFechaComentario($row['fechaComentario']);
-            $respuesta->setHoraComentario($row['horaComentario']);
-            
-            
-            
-            
-           
-             
-             
-           
-            
-             array_push($this->list, $respuesta);
             
               
             

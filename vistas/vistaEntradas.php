@@ -60,25 +60,14 @@ $listaEntradas = $objEntradas->getList();
                 <div class="menu-icon">
                     <i class="fa fa-bars fa-2x"></i>
                 </div>
-<!--                <div class="logo">
+                <div class="logo">
                     <img src="../IMG/Logo.png" style="position: static; width: 100px"> 
-                </div>-->
+                </div>
                 <div class="menu">
                     <ul>
-                        <li><a id="nav" class="nav" href="../index.php" >Inicio</a></li>
-                        <li><a id="nav" class="nav" href="#">Entradas</a></li>
-                         <?php  
-                        if(isset($_SESSION['privilegios'])){
-                           $Privilegios= $_SESSION['privilegios'];
-                           $Admin = "Administrador";
-                          
-                           if(strcmp($Privilegios,$Admin)== 0){
-                                ?>
-                        <li><a id="nav" class="nav" href="vistas/vistaAdmin.php">Panel Administrador</a></li>
-                        <?php 
-                           }
-                        }
-                              ?>
+                        <li><a id="nav" href="../index.php" >Inicio</a></li>
+                        <li><a id="nav" href="#">Entradas</a></li>
+                        
                          <?php  
                         
                            if(empty($_SESSION['usuario'])){
@@ -353,8 +342,7 @@ $listaEntradas = $objEntradas->getList();
   
   
 ?>
-        <br><br>
-        <div class="entrada container">
+        <div class="entrada">
         <div class="parte1">
             <div class="fecha" style="font-family: monospace; text-align: center;">FECHA COMPRA:<?php echo $objEntradas->getFechaCompra();?> </div>
             <div class="hora" style="font-family: monospace; text-align: center;">HORA COMPRA: <?php echo $objEntradas->getHoraCompra();?></div>     

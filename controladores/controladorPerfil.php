@@ -12,6 +12,8 @@ $fecha = filter_input(INPUT_POST, "fecha");
 $direccion = filter_input(INPUT_POST, "direccion");
 $correo = filter_input(INPUT_POST, "correo");
 $Usuario = $_SESSION['usuario'];
+
+
 $objPerfil= new UsuarioModel();
 $objPerfil->editarPerfil($nombre,$apellido1,$apellido2,$fecha,$direccion,$correo,$Usuario);
 

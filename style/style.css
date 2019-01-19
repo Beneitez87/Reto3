@@ -2,7 +2,6 @@ html, body {
       margin: 0;
       padding: 0;
       width: 100%;
-
 }
 
 body {
@@ -221,8 +220,7 @@ nav {
       width: 100%;
       line-height: 60px;
       z-index: 100;
-      
-     
+      border-bottom: 1px solid white;
       
  
     
@@ -231,7 +229,7 @@ nav {
 nav ul {
       line-height: 60px;
       list-style: none;
-      background: black;
+      background: rgba(0, 0, 0, 0);
       overflow: hidden;
       color: #fff;
       padding: 0;
@@ -243,12 +241,10 @@ nav ul {
 }
 
 nav.black ul {
-      background: white;  
-    
-}
-
-.nav.black{
-    color: black;
+      background: rgba(0, 0, 0, 0.5);
+      
+      
+      
 }
 
 
@@ -259,24 +255,16 @@ li {
       padding: 17px 30px;
 }
 
-/*#nav {
+#nav {
       text-decoration: none;
       color: white;
       font-size: 16px;
       transition: 0.5s;
       
-}*/
-.nav {
+}
+#nav:hover{
       text-decoration: none;
       color: white;
-      font-size: 20px;
-      font-family: arial;
-      transition: 0.5s;
-      
-}
-.nav:hover{
-      text-decoration: none;
-      color: #6e5494;
       font-size: 26px;
       
 }
@@ -667,76 +655,4 @@ footer{
       height: 12vh;
      background: url(../IMG/Concert-concerts-39454867-1920-1080.jpg) no-repeat ;
       background-size: cover;
-}
-
-.animateMe {
-
- position: relative;
-
- margin: 120px auto;
- display:block;
-
-
-}
-
-.animateMe:nth-child(even) {
-
-}
-
-
-
-/* Copy the CSS below to your project */
-
-.animateMe{
-  opacity: 0;
-}
- 
-.animateMe .animated{
-    opacity: 1;
-}
-
-
-/*-----------------------------------------------------------modal--------------------------------------------------------*/
-
-body {font-family: Arial, Helvetica, sans-serif;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 99; /* Sit on top */
-  padding-top: 300px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  
-  
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
 }
